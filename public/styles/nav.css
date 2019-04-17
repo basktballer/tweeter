@@ -8,7 +8,7 @@
   bottom: 0;
   padding: 0 2em 0 2em;
   background-color:  #00a087;
-  display: flex;
+  display: block;
   align-items: center;
   
 }
@@ -28,19 +28,17 @@
 }
 
 .nav-buttons {
-  display:block;
+  display:flex;
   position: relative;
   text-align: right;
-  align-content: flex-end;
-  flex-grow: 1;
-  /* flex-shrink: 2; */
+  justify-content: flex-end;
+  height: 100%;
 }
 
 #compose-button {
   align-self: center;
   background-color: white;
   padding: 1em 1em;
-  margin: 2em 0;
   border: 1px solid black;
   border-radius: 5px;
   opacity: 0.9;
@@ -51,7 +49,6 @@
   align-self: center;
   background-color: white;
   padding: 1em 1em;
-  margin: 2em 0;
   border: 1px solid black;
   border-radius: 5px;
   opacity: 1;
