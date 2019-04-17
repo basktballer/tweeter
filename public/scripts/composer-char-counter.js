@@ -1,8 +1,8 @@
-console.log("Character counter connected.")
+// console.log("Character counter connected.")
 $(document).ready(function() {
   // --- our code goes here ---
-  console.log("DOM Ready.")
-  $(".tweetArea").on("input", function(ev) {
+  // console.log("DOM Ready.")
+  $(".tweet-area").on("input", function(ev) {
     // --- our code goes here ---
     
     let elm = $(this);

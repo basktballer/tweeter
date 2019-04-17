@@ -19,7 +19,7 @@
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/app.js"></script> -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
@@ -29,6 +29,9 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png" >
       <span class="header">Tweeter</span>
+      <div class="nav-buttons">
+        <span id="compose-button">Compose</span>
+      </div>
     </nav>
 
     <!-- Page-specific (main) content here -->
@@ -36,34 +39,17 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
-          <textarea class ="tweetArea" name="text" placeholder="What are you humming about?"></textarea>
+          <textarea class ="tweet-area" name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
       </section>
-      <section id="tweetContainer">
-        <article class="tweet">
-          <header>
-            <img src="https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png">
-            <h2>Johann Johann</h2>
-            <p>@MrJohann</p>
-          </header>
-          <article>
-            <p>Little Tweet Here</p>
-          </article>
-          <footer>
-            <span>10 days ago</span>
-            <span class="icons">
-              <i class="material-icons">flag</i>
-              <i class="material-icons">cached</i>
-              <i class="material-icons">favorite</i>
-            </span>
-          </footer>
-        </article>
+      <section id="tweet-container">       
       </section>
     </main>
 
 
 
   </body>
+  <script type="text/javascript" src="/scripts/app.js"></script>
 </html>
