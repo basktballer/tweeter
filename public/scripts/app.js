@@ -3,52 +3,16 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-// Fake data taken from tweets.json
-
-let composeDisplayed = false;
-
-function timeDiff(time1, time2) {
-
-  const msPerMinute = 60 * 1000;
-  const msPerHour = msPerMinute * 60;
-  const msPerDay = msPerHour * 24;
-  const msPerMonth = msPerDay * 30;
-  const msPerYear = msPerDay * 365;
-
-  let diff = time1 - time2;
-
-  if (diff < msPerMinute) {
-    return Math.round(diff/1000) + ' seconds ago';   
-  } else if (diff < msPerHour) {
-    return Math.round(diff/msPerMinute) + ' minutes ago';   
-  } else if (diff < msPerDay ) {
-    return Math.round(diff/msPerHour ) + ' hours ago';   
-  } else if (diff < msPerMonth) {
-    return Math.round(diff/msPerDay) + ' days ago';   
-  } else if (diff < msPerYear) {
-    return Math.round(diff/msPerMonth) + ' months ago';   
-  } else {
-    return Math.round(diff/msPerYear ) + ' years ago';   
-  }
-}
-
 
 function createTweetElement(tweet) {
 
-  var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-  var datePosted = tweet.created_at;
-  var dateNow = Date.now();
-  // console.log(datePosted, datePosted.getTime(), dateNow, dateNow.getTime());
-  
-
-  // var diffDays = Math.round(Math.abs((datePosted.getTime() - dateNow.getTime())/(oneDay)));
-  var diffDays = timeDiff(dateNow, datePosted);
-  // console.log(diffDays);
-  // let timeAgo = (tweet.created_at - Date.now())
+  let diffDays = moment(tweet.created_at).fromNow();
   let $htmlOutput = $("<article>").addClass("tweet");  
   $htmlOutput.append($("</article>"));
   $htmlOutput.append($("<header>").append($(`<img src= ${tweet.user.avatars.small}>`)).append(`<h2>${tweet.user.name}</h2>`).append(`<p>${tweet.user.handle}</p>`));
-  $htmlOutput.append($("<article>").append($(`<p>${escape(tweet.content.text)}</p>`)));
+  // $htmlOutput.append($("<article>").append($(`<p>${escape(tweet.content.text)}</p>`)));
+  $htmlOutput.append($("<article>").append($("<p>").text(tweet.content.text)));
+
   $htmlOutput.append($("<footer>").append($(`<span>${diffDays}</span>`)).append($(`<span class="icons"><i class="material-icons">flag</i><i class="material-icons">cached</i><i class="material-icons">favorite</i></span>`)));
   
   return $htmlOutput;
@@ -89,17 +53,30 @@ function escape(str) {
   return div.innerHTML;
 }
 
+function enterKeyPress(e) {
+  if (e.which == 13) {
+    $("form").submit();
+    return false;
+  }
+}
+
 $(document).ready(function () {
 
   loadTweets();
   $("form").on("submit", function(event) {
     event.preventDefault();
+    $(".input-error").slideUp("fast");
+    $(".input-error").text("");
     const userInput =  $(this).serialize();
     if (userInput.slice(5) === "" || userInput.slice(5) === undefined ) {
-      alert("Blank entry submitted. Please enter tweet and try again.")
+      $(".input-error").slideToggle("fast", () => {
+        $(".input-error").text("Blank entry submitted. Please enter tweet and try again.");
+      });
     } 
     else if (userInput.slice(5).length > 140) {
-      alert("Tweet too long. Please ensure tweet length is 140 characters or less.")
+      $(".input-error").slideToggle("fast", () => {
+        $(".input-error").text("Tweet too long. Please ensure tweet length is 140 characters or less.");
+      });
     }  
     else {
       $.ajax({
@@ -122,8 +99,20 @@ $(document).ready(function () {
       // })    
     }
   });
+  $("html").keypress(function (e) {
+    if (e.which == 13) {
+      // $("form").submit();
+      return false;
+    }
+  });
+  $(".tweet-area").keypress(function (e) {
+    if (e.which == 13) {
+      $("form").submit();
+      return false;
+    }
+  });
   $("#compose-button").on("click", function () {
-    $(".new-tweet").slideToggle("slow");
+    $(".new-tweet").slideToggle("fast");
     if ($(".new-tweet").is(':visible')) 
     {
       $(".tweet-area").focus();

@@ -21,3 +21,10 @@
   border-radius: 10px;
   background-color: #eee;
 }
+
+.input-error {
+  color: red;
+  margin: 0.5em 0;
+  font-size: 0.75em;
+  display: none;
+}
