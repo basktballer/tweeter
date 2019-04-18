@@ -1,3 +1,12 @@
+.new-tweet {
+  background-color: #eee;
+  border: 2px solid Grey;
+  border-radius: 10px;
+  display: none;
+  margin: 2em;
+  padding: 0.5em;
+}
+
 .new-tweet h2 {
   border-bottom: 2px solid #244751;
   margin: 0 0 1em 0;
@@ -12,15 +21,6 @@
 .counter {
   color:  #244751;
   float: right;
-}
-
-.new-tweet {
-  background-color: #eee;
-  border: 2px solid Grey;
-  border-radius: 10px;
-  display: none;
-  margin: 2em;
-  padding: 0.5em;
 }
 
 .input-error {

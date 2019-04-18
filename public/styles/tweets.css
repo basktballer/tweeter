@@ -8,11 +8,9 @@ article.tweet {
   border-radius: 10px;
   box-sizing: border-box;
   margin: 2em;
-  /* height: 200px; */
 }
 
 article.tweet:hover{
-  /* background: purple; */
   border: 2px solid gray;
 }
 

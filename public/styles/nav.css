@@ -1,5 +1,4 @@
 #nav-bar {
-  /* border: 1px solid red; */
   align-items: center;
   background-color:  #00a087;
   bottom: 0;
@@ -10,7 +9,6 @@
   position: fixed;
   right:0;
   top:0;
-  
 }
 
 #nav-bar .logo {

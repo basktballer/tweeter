@@ -1,18 +1,17 @@
 /*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
+ * Client-side JS logic
  */
 
 function createTweetElement(tweet) {
 
+  // calculate time fromNow using client side moment.js
   const diffDays = moment(tweet.created_at).fromNow();
+
+  // generate html text for tweet
   let $htmlOutput = $("<article>").addClass("tweet");  
   $htmlOutput.append($("</article>"));
-  // $htmlOutput.append($("<header>").append($(`<img src= ${tweet.user.avatars.small}>`)).append(`<h2>${tweet.user.name}</h2>`).append(`<p>${tweet.user.handle}</p>`));
+  $htmlOutput.append($("<header>").append($(`<img src= ${tweet.user.avatars.small}>`)).append(`<h2>${tweet.user.name}</h2>`).append(`<p>${tweet.user.handle}</p>`));
   $htmlOutput.append($("<article>").append($(`<p>${escape(tweet.content.text)}</p>`)));
-  $htmlOutput.append($("<article>").append($("<p>").text(tweet.content.text)));
-
   $htmlOutput.append($("<footer>").append($(`<span>${diffDays}</span>`)).append($(`<span class="icons"><i class="material-icons">flag</i><i class="material-icons">cached</i><i class="material-icons">favorite</i></span>`)));
   
   return $htmlOutput;
@@ -26,6 +25,7 @@ function renderTweets(tweets) {
 }
 
 function autoRenderNewTweet() {
+  // ajax get to add new tweets to the page after they are created
   $.ajax({
     type: 'GET',
     url: "/tweets",
@@ -37,6 +37,7 @@ function autoRenderNewTweet() {
 }
 
 function loadTweets() {
+  // ajax get to load all tweets to the page, when page loaded 
   $.ajax({
     type: 'GET',
     url: "/tweets",
@@ -48,20 +49,13 @@ function loadTweets() {
 }
 
 function escape(str) {
+  // escape function used to prevent cross-site scripting
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
 
-function enterKeyPress(e) {
-  if (e.which == 13) {
-    $("form").submit();
-    return false;
-  }
-}
-
 $(document).ready(function () {
-
   loadTweets();
   $("form").on("submit", function(event) {
     event.preventDefault();
@@ -93,21 +87,11 @@ $(document).ready(function () {
       .fail ( () => {
         console.log("Tweet upload failed.");
       })
-  
-      // $.post("/tweets", tweet, function() {
-      //   console.log("Tweet uploaded");
-      // })    
     }
   });
   $("html").keypress(function (e) {
+    // enter key pressed disabled
     if (e.which == 13) {
-      // $("form").submit();
-      return false;
-    }
-  });
-  $(".tweet-area").keypress(function (e) {
-    if (e.which == 13) {
-      $("form").submit();
       return false;
     }
   });
