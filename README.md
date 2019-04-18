@@ -27,4 +27,4 @@ This repository is the starter code for the project: Students will fork and clon
 - Cross-site scripting prevention
 - Tweet length error handling
 - Ajax GET and POST
-- Local MongoDB for tweet storage
+- Local MongoDB implemented
