@@ -6,11 +6,11 @@
 
 function createTweetElement(tweet) {
 
-  let diffDays = moment(tweet.created_at).fromNow();
+  const diffDays = moment(tweet.created_at).fromNow();
   let $htmlOutput = $("<article>").addClass("tweet");  
   $htmlOutput.append($("</article>"));
-  $htmlOutput.append($("<header>").append($(`<img src= ${tweet.user.avatars.small}>`)).append(`<h2>${tweet.user.name}</h2>`).append(`<p>${tweet.user.handle}</p>`));
-  // $htmlOutput.append($("<article>").append($(`<p>${escape(tweet.content.text)}</p>`)));
+  // $htmlOutput.append($("<header>").append($(`<img src= ${tweet.user.avatars.small}>`)).append(`<h2>${tweet.user.name}</h2>`).append(`<p>${tweet.user.handle}</p>`));
+  $htmlOutput.append($("<article>").append($(`<p>${escape(tweet.content.text)}</p>`)));
   $htmlOutput.append($("<article>").append($("<p>").text(tweet.content.text)));
 
   $htmlOutput.append($("<footer>").append($(`<span>${diffDays}</span>`)).append($(`<span class="icons"><i class="material-icons">flag</i><i class="material-icons">cached</i><i class="material-icons">favorite</i></span>`)));
@@ -20,7 +20,7 @@ function createTweetElement(tweet) {
 }
 
 function renderTweets(tweets) {
-  for(var tweet of tweets) {
+  for(const tweet of tweets) {
     $('#tweet-container').append(createTweetElement(tweet));
   }
 }
@@ -48,7 +48,7 @@ function loadTweets() {
 }
 
 function escape(str) {
-  var div = document.createElement('div');
+  let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }

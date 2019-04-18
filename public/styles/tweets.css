@@ -55,8 +55,8 @@ article.tweet header p {
 
 article.tweet article {
   background-color:white;
-  padding: 1em;
   overflow-wrap: break-word; 
+  padding: 1em;
   width: 100%;
 }
 
@@ -73,16 +73,16 @@ article.tweet span {
 }
 
 article.tweet .icons {
-  font-size: 1em;
   color:#00a087;
-  margin: 0;
   display: none;
   float: right;
+  font-size: 1em;
+  margin: 0;
 }
 
 article.tweet:hover .icons{
-  font-size: 1em;
-  margin: 0;
   display: flex;
   flex-direction: row;
+  font-size: 1em;
+  margin: 0;
 }
