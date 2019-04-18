@@ -15,3 +15,16 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- body-parser
+- chance
+- mongodb
+- moment.js
+
+## Features
+
+- Compose button toggles display of Compose Tweet container
+- Character counter
+- Cross-site scripting prevention
+- Tweet length error handling
+- Ajax GET and POST
+- Local MongoDB for tweet storage
