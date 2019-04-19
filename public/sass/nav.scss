@@ -1,21 +1,17 @@
-$primary-color: #00a087;
-$secondary-color: #244751;
-$header-font-color: #e8fdff;
-$background-color: white;
-$border-radius: 5px;
-$nav-bar-dim: 80px;
+@import 'sassvars';
+
 %compose-shared {
   align-self: center;
-  background-color: $background-color;
-  border: 1px solid $secondary-color;
-  border-radius: $border-radius;
-  padding: 1em 1em;
+  background-color: $primary-background-color;
+  border: 1px solid $primary-font-color;
+  border-radius: $compose-border-radius;
+  padding: 1rem 1rem;
   display:flex;
   justify-content: space-between;
   
   i {
     align-self: center;
-    font-size: 1em;
+    font-size: 1rem;
     padding-right: 0.25rem;
   }
 }
@@ -27,7 +23,7 @@ $nav-bar-dim: 80px;
   bottom:0;
   display: block;
   height: $nav-bar-dim;
-  padding: 0 2em 0 2em;
+  padding: 0 2rem 0 2rem;
   position: fixed;
   right:0;
   top:0;
@@ -42,9 +38,9 @@ $nav-bar-dim: 80px;
   .header {
     color: $header-font-color;
     float: left;
-    font-size: 2em;
+    font-size: 2rem;
     line-height: 2.5;
-    margin-left: 1em;
+    margin-left: 1rem;
 
   }
 
@@ -66,6 +62,6 @@ $nav-bar-dim: 80px;
 
 #compose-button:hover {
   @extend %compose-shared;
-  color:  $secondary-color;
+  color:  $primary-font-color;
   opacity: 1;
 }

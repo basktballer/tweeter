@@ -3,13 +3,13 @@
   background-color: white;
   border: 1px solid #244751;
   border-radius: 5px;
-  padding: 1em 1em;
+  padding: 1rem 1rem;
   display: flex;
   justify-content: space-between;
 }
 #compose-button:hover i, #compose-button i {
   align-self: center;
-  font-size: 1em;
+  font-size: 1rem;
   padding-right: 0.25rem;
 }
 
@@ -19,7 +19,7 @@
   bottom: 0;
   display: block;
   height: 80px;
-  padding: 0 2em 0 2em;
+  padding: 0 2rem 0 2rem;
   position: fixed;
   right: 0;
   top: 0;
@@ -33,9 +33,9 @@
 #nav-bar .header {
   color: #e8fdff;
   float: left;
-  font-size: 2em;
+  font-size: 2rem;
   line-height: 2.5;
-  margin-left: 1em;
+  margin-left: 1rem;
 }
 
 .nav-buttons {
