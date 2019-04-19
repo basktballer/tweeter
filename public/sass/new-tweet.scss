@@ -1,0 +1,35 @@
+$primary-font-color: #244751;
+
+
+
+.new-tweet {
+  background-color: #eee;
+  border: 2px solid Grey;
+  border-radius: 10px;
+  display: none;
+  margin: 2em;
+  padding: 0.5em;
+
+  h2 {
+    border-bottom: 2px solid $primary-font-color;
+    margin: 0 0 1em 0;
+  }
+
+  textarea {
+    padding: 0.5em;
+    resize: none;
+    width: 100%;
+  }
+}
+
+.counter {
+  color:  $primary-font-color;
+  float: right;
+}
+
+.input-error {
+  color: red;
+  display: none;
+  font-size: 0.75em;
+  margin: 0.5em 0;
+}

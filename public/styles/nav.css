@@ -1,3 +1,5 @@
+
+
 #nav-bar {
   align-items: center;
   background-color:  #00a087;
@@ -41,6 +43,8 @@
   color:  #00a087;
   opacity: 0.9;
   padding: 1em 1em;
+  display:flex;
+  justify-content: space-between;
 }
 
 #compose-button:hover {
@@ -51,4 +55,10 @@
   color:  black;
   opacity: 1;
   padding: 1em 1em;
+}
+
+#compose-button i {
+  align-self: center;
+  font-size: 1em;
+  padding-right: 0.25rem;
 }

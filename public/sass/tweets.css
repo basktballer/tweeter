@@ -1,0 +1,78 @@
+article.tweet:hover header, article.tweet header {
+  background: #eee;
+  border-radius: 10px 10px 0 0;
+  box-sizing: border-box;
+  height: 70px;
+  margin: 0px;
+}
+
+article.tweet:hover .icons, article.tweet .icons {
+  font-size: 1em;
+  margin: 0;
+}
+
+#tweetContainer {
+  box-sizing: border-box;
+}
+
+article.tweet {
+  background-color: #eee;
+  border: 2px solid lightgrey;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin: 2em;
+}
+article.tweet header {
+  opacity: 0.2;
+}
+article.tweet article {
+  background-color: white;
+  overflow-wrap: break-word;
+  padding: 1em;
+  width: 100%;
+}
+article.tweet footer {
+  background-color: white;
+  border-top: 2px solid #eee;
+  border-radius: 0 0 10px 10px;
+  padding: 1em 0.5em;
+}
+article.tweet span {
+  font-size: 0.75em;
+  margin: 0.5em;
+}
+article.tweet .icons {
+  color: #00a087;
+  display: none;
+  float: right;
+}
+
+article.tweet:hover {
+  border: 2px solid gray;
+}
+article.tweet:hover header {
+  opacity: 1;
+}
+article.tweet:hover .icons {
+  display: flex;
+  flex-direction: row;
+}
+
+article.tweet header img {
+  border-radius: 10px;
+  float: left;
+  margin: 0.5em;
+}
+article.tweet header h2 {
+  float: left;
+  margin: 0em;
+  padding: 0.5em 0 0 0;
+}
+article.tweet header p {
+  color: grey;
+  float: right;
+  margin: 0;
+  padding: 1em 0.5em;
+}
+
+/*# sourceMappingURL=tweets.css.map */

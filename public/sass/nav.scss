@@ -1,0 +1,71 @@
+$primary-color: #00a087;
+$secondary-color: #244751;
+$header-font-color: #e8fdff;
+$background-color: white;
+$border-radius: 5px;
+$nav-bar-dim: 80px;
+%compose-shared {
+  align-self: center;
+  background-color: $background-color;
+  border: 1px solid $secondary-color;
+  border-radius: $border-radius;
+  padding: 1em 1em;
+  display:flex;
+  justify-content: space-between;
+  
+  i {
+    align-self: center;
+    font-size: 1em;
+    padding-right: 0.25rem;
+  }
+}
+
+
+#nav-bar {
+  align-items: center;
+  background-color:  $primary-color;
+  bottom:0;
+  display: block;
+  height: $nav-bar-dim;
+  padding: 0 2em 0 2em;
+  position: fixed;
+  right:0;
+  top:0;
+  left:0;
+
+  .logo {
+    float: left;
+    height: $nav-bar-dim;
+    width: $nav-bar-dim;
+  }
+
+  .header {
+    color: $header-font-color;
+    float: left;
+    font-size: 2em;
+    line-height: 2.5;
+    margin-left: 1em;
+
+  }
+
+}
+
+.nav-buttons {
+  display:flex;
+  height: 100%;
+  justify-content: flex-end;
+  position: relative;
+  text-align: right;
+}
+
+#compose-button {
+  @extend %compose-shared;
+  color:  $primary-color;
+  opacity: 0.9;
+}
+
+#compose-button:hover {
+  @extend %compose-shared;
+  color:  $secondary-color;
+  opacity: 1;
+}
