@@ -1,4 +1,4 @@
-#compose-button:hover, #compose-button {
+#nav-bar .nav-buttons #compose-button:hover, #nav-bar .nav-buttons #compose-button {
   align-self: center;
   background-color: white;
   border: 1px solid #244751;
@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
 }
-#compose-button:hover i, #compose-button i {
+#nav-bar .nav-buttons #compose-button:hover i, #nav-bar .nav-buttons #compose-button i {
   align-self: center;
   font-size: 1rem;
   padding-right: 0.25rem;
@@ -37,21 +37,18 @@
   line-height: 2.5;
   margin-left: 1rem;
 }
-
-.nav-buttons {
+#nav-bar .nav-buttons {
   display: flex;
   height: 100%;
   justify-content: flex-end;
   position: relative;
   text-align: right;
 }
-
-#compose-button {
+#nav-bar .nav-buttons #compose-button {
   color: #00a087;
   opacity: 0.9;
 }
-
-#compose-button:hover {
+#nav-bar .nav-buttons #compose-button:hover {
   color: #244751;
   opacity: 1;
 }

@@ -17,17 +17,16 @@
     padding: 0.5rem;
     resize: none;
     width: 100%;
+  
+  }  
+  .input-error {
+    color: red;
+    display: none;
+    font-size: 0.75rem;
+    margin: 0.5rem 0;
   }
-}
-
-.counter {
-  color:  $primary-font-color;
-  float: right;
-}
-
-.input-error {
-  color: red;
-  display: none;
-  font-size: 0.75rem;
-  margin: 0.5rem 0;
+  .counter {
+    color:  $primary-font-color;
+    float: right;
+  }
 }

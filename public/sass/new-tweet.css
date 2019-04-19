@@ -15,17 +15,15 @@
   resize: none;
   width: 100%;
 }
-
-.counter {
-  color: #244751;
-  float: right;
-}
-
-.input-error {
+.new-tweet .input-error {
   color: red;
   display: none;
   font-size: 0.75rem;
   margin: 0.5rem 0;
+}
+.new-tweet .counter {
+  color: #244751;
+  float: right;
 }
 
 /*# sourceMappingURL=new-tweet.css.map */

@@ -26,6 +26,24 @@ article.tweet {
   header {
     @extend %header-shared;
     opacity: 0.2;
+    img {
+      border-radius: $tweet-border-radius;
+      float: left;
+      margin: 0.5rem;
+    }
+  
+    h2 {
+      float: left;
+      margin: 0rem;
+      padding: 0.5rem 0 0 0;
+    }
+  
+    p {
+      color: $primary-font-color;
+      float: right;
+      margin: 0;
+      padding: 1rem 0.5rem;
+    }
   }
 
   article {
@@ -54,42 +72,20 @@ article.tweet {
     float: right;
   }
 
-}
-
-article.tweet:hover{
-  border: 2px solid $primary-border-color;
-
-  header {
-    @extend %header-shared;
-    opacity: 1;
+  &:hover {
+    border: 2px solid $primary-border-color;
+    
+    header {
+      @extend %header-shared;
+      opacity: 1;
+    }
+    
+    .icons {
+      @extend %icons-shared;
+      display: flex;
+      flex-direction: row;
+    }
   }
 
-  .icons {
-    @extend %icons-shared;
-    display: flex;
-    flex-direction: row;
-  }
-}
-
-article.tweet header {
-
-  img {
-    border-radius: $tweet-border-radius;
-    float: left;
-    margin: 0.5rem;
-  }
-
-  h2 {
-    float: left;
-    margin: 0rem;
-    padding: 0.5rem 0 0 0;
-  }
-
-  p {
-    color: $primary-font-color;
-    float: right;
-    margin: 0;
-    padding: 1rem 0.5rem;
-  }
 }
 

@@ -44,24 +44,24 @@
 
   }
 
+  .nav-buttons {
+    display:flex;
+    height: 100%;
+    justify-content: flex-end;
+    position: relative;
+    text-align: right;
+  
+    #compose-button {
+      @extend %compose-shared;
+      color:  $primary-color;
+      opacity: 0.9;
+    
+      &:hover {
+        @extend %compose-shared;
+        color:  $primary-font-color;
+        opacity: 1;
+      }
+    }
+  }
 }
 
-.nav-buttons {
-  display:flex;
-  height: 100%;
-  justify-content: flex-end;
-  position: relative;
-  text-align: right;
-}
-
-#compose-button {
-  @extend %compose-shared;
-  color:  $primary-color;
-  opacity: 0.9;
-}
-
-#compose-button:hover {
-  @extend %compose-shared;
-  color:  $primary-font-color;
-  opacity: 1;
-}
