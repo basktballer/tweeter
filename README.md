@@ -41,6 +41,9 @@ This repository is the starter code for the project: Students will fork and clon
 ## Screenshots
 
 !["Screenshot of all tweets on desktop"](https://github.com/basktballer/tweeter/blob/master/docs/all-tweets-desktop.png)
+
 !["Screenshot of composing tweets on desktop"](https://github.com/basktballer/tweeter/blob/master/docs/compose-tweet-desktop.png)
+
 !["Screenshot of composing tweets on reduced desktop window"](https://github.com/basktballer/tweeter/blob/master/docs/compose-tweet-reduced.png)
+
 !["Screenshot of composing tweets on mobile"](https://github.com/basktballer/tweeter/blob/master/docs/compose-tweet-mobile.png)
