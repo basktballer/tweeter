@@ -23,27 +23,32 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Features
 
+- Compose a tweet written by an auto-generated user name
+- Like counter that only allows one like / dislike per visit per tweet
+- Tweets are stored in and retrieved from a local mongoDB
+  - Use of Ajax GET and POST
 - Compose button toggles display of Compose Tweet container on desktop and reduced widths desktop
 - Responsive design for small width displays and mobile devices
-  - Compose button auto-toggled
-- Character counter
+  - Compose button will be auto-toggled in these instances
+- Tweet length character counter
+- Tweet length error handling and messaging
 - Cross-site scripting prevention
-- Tweet length error handling
-- Ajax GET and POST
-- Local MongoDB implemented
-- Like counter that only allows one like / dislike respectively
 
 ## In Development
 
-- User logins and like counters tied to logins
+- User logins and likes tied to users
 - Heroku deployment
 
 ## Screenshots
 
+All tweets on desktop view
 !["Screenshot of all tweets on desktop"](https://github.com/basktballer/tweeter/blob/master/docs/all-tweets-desktop.png)
 
+Compose tweet on desktop view
 !["Screenshot of composing tweets on desktop"](https://github.com/basktballer/tweeter/blob/master/docs/compose-tweet-desktop.png)
 
+Compose tweet on reduced desktop view
 !["Screenshot of composing tweets on reduced desktop window"](https://github.com/basktballer/tweeter/blob/master/docs/compose-tweet-reduced.png)
 
+Compose tweet on mobile view
 !["Screenshot of composing tweets on mobile"](https://github.com/basktballer/tweeter/blob/master/docs/compose-tweet-mobile.png)
