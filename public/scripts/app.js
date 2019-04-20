@@ -8,11 +8,14 @@ function createTweetElement(tweet) {
   const diffDays = moment(tweet.created_at).fromNow();
 
   // generate html text for tweet
-  let $htmlOutput = $("<article>").addClass("tweet");  
+  let $htmlOutput = $(`<article >`).addClass("tweet");  
   $htmlOutput.append($("</article>"));
   $htmlOutput.append($("<header>").append($(`<img src= ${tweet.user.avatars.small}>`)).append(`<h2>${tweet.user.name}</h2>`).append(`<p>${tweet.user.handle}</p>`));
   $htmlOutput.append($("<article>").append($(`<p>${escape(tweet.content.text)}</p>`)));
-  $htmlOutput.append($("<footer>").append($(`<span>${diffDays}</span>`)).append($(`<span class="icons"><i class="material-icons">flag</i><i class="material-icons">cached</i><i class="material-icons">favorite</i></span>`)));
+  $htmlOutput.append($("<footer>").append($(`<span>${diffDays}</span>`)).append($(`<span class="icons"><i class="material-icons">flag</i><i class="material-icons">cached</i><i class="material-icons fav-icon" data-tweetid='${tweet._id}'>favorite</i><span>${tweet.likes}</span></span>`)));
+  // $htmlOoutput.$( ).appendTo( ".icons" );
+  
+  // $htmlOutput.find($(".icons")).append(`<span>${tweet.likes}</span>`)
   
   return $htmlOutput;
 
@@ -62,12 +65,13 @@ $(document).ready(function () {
     $(".input-error").slideUp("fast");
     $(".input-error").text("");
     const userInput =  $(this).serialize();
-    if (userInput.slice(5) === "" || userInput.slice(5) === undefined ) {
+    const inputLength = $(".tweet-area").val().trim().length;
+    if (inputLength === 0) {
       $(".input-error").slideToggle("fast", () => {
         $(".input-error").text("Blank entry submitted. Please enter tweet and try again.");
       });
     } 
-    else if (userInput.slice(5).length > 140) {
+    else if (inputLength > 140) {
       $(".input-error").slideToggle("fast", () => {
         $(".input-error").text("Tweet too long. Please ensure tweet length is 140 characters or less.");
       });
@@ -89,11 +93,26 @@ $(document).ready(function () {
       })
     }
   });
-  $("html").keypress(function (e) {
-    // enter key pressed disabled
-    if (e.which == 13) {
-      return false;
+  $("#tweet-container").on("click", ".fav-icon", function (e) {
+    // like increment counter, stretch activity in progress
+    let tweetID = $(this).data("tweetid");
+    let action = 0;
+    if ($(this).hasClass("clicked")) {
+      $(this).removeClass("clicked");
+      action = -1;
+    } else {
+      $(this).addClass("clicked");
+      action = 1;
     }
+    $.ajax({
+      type: 'POST',
+      url: "/tweets/" + tweetID,
+      data: {tweetID, action}
+    })
+    .done( response => {
+      $(this).siblings("span").text(response);
+    });
+
   });
   $("#compose-button").on("click", function () {
     $(".new-tweet").slideToggle("fast");
