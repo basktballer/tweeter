@@ -30,7 +30,7 @@
   .new-tweet {
     display: block;
     font-size: medium;
-    padding: 1.5rem;
+    padding: 0.5rem;
   }
   .new-tweet input {
     width: 25%;
