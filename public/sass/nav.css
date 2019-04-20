@@ -53,4 +53,13 @@
   opacity: 1;
 }
 
+@media screen and (max-width: 500px) {
+  #nav-bar {
+    min-width: 300px;
+  }
+  #nav-bar .nav-buttons #compose-button {
+    display: none;
+  }
+}
+
 /*# sourceMappingURL=nav.css.map */

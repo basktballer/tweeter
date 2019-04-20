@@ -65,3 +65,15 @@
   }
 }
 
+@media screen and (max-width: 500px) {
+  #nav-bar {
+    min-width: 300px;
+    .nav-buttons {
+      #compose-button {    
+        display: none;    
+      }
+    }
+  }
+  
+}
+

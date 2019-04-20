@@ -26,4 +26,15 @@
   float: right;
 }
 
+@media screen and (max-width: 500px) {
+  .new-tweet {
+    display: block;
+    font-size: medium;
+    padding: 1.5rem;
+  }
+  .new-tweet input {
+    width: 25%;
+  }
+}
+
 /*# sourceMappingURL=new-tweet.css.map */

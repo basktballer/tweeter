@@ -36,4 +36,10 @@ main {
   width: 450px;
 }
 
+@media screen and (max-width: 500px) {
+  main {
+    width: 100%;
+  }
+}
+
 /*# sourceMappingURL=layout.css.map */

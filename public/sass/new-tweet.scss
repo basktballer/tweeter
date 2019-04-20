@@ -30,3 +30,14 @@
     float: right;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .new-tweet {
+    display: block;
+    font-size: $mobile-font-size;
+    padding: 1.5rem;
+    input {
+      width: 25%;
+    }
+  }
+}

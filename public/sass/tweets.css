@@ -61,6 +61,13 @@ article.tweet .icons {
   color: #00a087;
   display: none;
   float: right;
+  cursor: pointer;
+}
+article.tweet .icons span {
+  font-size: 1em;
+}
+article.tweet .icons .clicked {
+  color: #eb6c81;
 }
 article.tweet:hover {
   border: 2px solid grey;
@@ -71,6 +78,32 @@ article.tweet:hover header {
 article.tweet:hover .icons {
   display: flex;
   flex-direction: row;
+}
+
+@media screen and (max-width: 500px) {
+  article.tweet {
+    font-size: medium;
+    border: 2px solid grey;
+  }
+  article.tweet header {
+    opacity: 1;
+  }
+  article.tweet header p {
+    margin-right: 0.5rem;
+  }
+  article.tweet footer {
+    font-size: medium;
+  }
+  article.tweet .icons {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+  }
+  article.tweet .icons span {
+    align-items: center;
+    font-size: medium;
+  }
 }
 
 /*# sourceMappingURL=tweets.css.map */

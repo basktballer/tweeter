@@ -70,6 +70,16 @@ article.tweet {
     color: $primary-color;
     display: none;
     float: right;
+    cursor: pointer;
+    
+
+    span{
+      font-size:1em;
+    }
+
+    .clicked {
+      color: $liked-color;
+    }
   }
 
   &:hover {
@@ -89,3 +99,40 @@ article.tweet {
 
 }
 
+@media screen and (max-width: 500px) {
+  
+  article.tweet {
+    font-size: $mobile-font-size;
+    // display all tweets as if hovered
+    border: 2px solid $primary-border-color;
+   
+    header {
+      @extend %header-shared;
+      opacity: 1;
+      p {
+        margin-right: 0.5rem;
+      }
+    }
+
+    footer {
+      font-size: $mobile-font-size;
+    }
+    
+    .icons {
+      @extend %icons-shared;
+      display: flex;
+      flex-direction: row;
+      padding:0;
+      margin:0;
+      span{
+        align-items:center;
+        font-size: $mobile-font-size;     
+      }
+    }
+    
+    .icons.span{
+      // margin-right: 0.75rem; 
+    }
+
+  }
+}
