@@ -2,7 +2,7 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, SASS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
 
 ## Getting Started
 
@@ -17,14 +17,30 @@ This repository is the starter code for the project: Students will fork and clon
 - Node 5.10.x or above
 - body-parser
 - chance
+- md5
 - mongodb
 - moment.js
 
 ## Features
 
-- Compose button toggles display of Compose Tweet container
+- Compose button toggles display of Compose Tweet container on desktop and reduced widths desktop
+- Responsive design for small width displays and mobile devices
+  - Compose button auto-toggled
 - Character counter
 - Cross-site scripting prevention
 - Tweet length error handling
 - Ajax GET and POST
 - Local MongoDB implemented
+- Like counter that only allows one like / dislike respectively
+
+## In Development
+
+- User logins and like counters tied to logins
+- Heroku deployment
+
+## Screenshots
+
+!["Screenshot of all tweets on desktop"](https://github.com/basktballer/tweeter/blob/master/docs/all-tweets-desktop.png)
+!["Screenshot of composing tweets on desktop"](https://github.com/basktballer/tweeter/blob/master/docs/compose-tweets-desktop.png)
+!["Screenshot of composing tweets on reduced desktop window"](https://github.com/basktballer/tweeter/blob/master/docs/compose-tweets-reduced.png)
+!["Screenshot of composing tweets on mobile"](https://github.com/basktballer/tweeter/blob/master/docs/compose-tweets-mobile.png)
