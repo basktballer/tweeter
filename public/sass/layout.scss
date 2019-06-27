@@ -37,6 +37,14 @@ body {
    min-width: 450px;
    padding: 1rem;
    width: 450px;
+   display: flex;
+   visibility: hidden;
+   flex-direction: column;
+  //  align-items: flex-start;
+   justify-content: center;
+   .logged-in {
+     visibility: visible;
+   }
  }
 
  @media screen and (max-width: 500px) {

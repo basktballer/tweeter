@@ -9,12 +9,15 @@
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/sass/layout.css" type="text/css" />
     <link rel="stylesheet" href="/sass/nav.css" type="text/css" />
     <link rel="stylesheet" href="/sass/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/sass/tweets.css" type="text/css" />
+    <link rel="stylesheet" href="/sass/login.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -40,7 +43,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST">
+        <form id="tweet-form" action="/tweets" method="POST">
           <textarea class ="tweet-area" name="text" placeholder="What are you humming about?"></textarea>
           <p class = "input-error">Error Message</p>
           <input type="submit" value="Tweet">
@@ -49,36 +52,40 @@
       </section>
       <section id="tweet-container">       
       </section>
+      
     </main>
-
-    <div id="popup_login" class="popupModal popup-display container">
-      <div class="popupBoxWrapper row">
-        <div class="popupBoxContent col-12">
-          <div class="row">
-            <div class="col-6 form_header_wrap">
-              <h3 class="login-button">Login</h3>
+    
+    <div id="login-container">
+      <div id="popup_login" class="popupModal popup-display container">
+        <div class="popupBoxWrapper row">
+          <div class="popupBoxContent col-12">
+            <div class="row">
+              <div class="col-6 form_header_wrap">
+                <h3 class="login-button">Login</h3>
+              </div>
+              <div class="col-6 close_Wrap d-flex flex-row-reverse">
+              <button class="login_close_button">Close</button>
+              </div>
             </div>
-            <div class="col-6 close_Wrap d-flex flex-row-reverse">
-            <button class="login_close_button">Close</button>
-            </div>
-          </div>
-          <div class="alert alert-warning" role="alert">Test Error
-            </div>
-          <div class="popup_form_wrap row">
-            <div class="col-12">
-              <form class="login-form">
-                  <label for="username"><b>Username</b></label>
-                  <input type="text" placeholder="Enter Username" name="username">
-                  <label for="password"><b>Password</b></label>
-                  <input type="password" placeholder="Enter Password" name="password">
-                  <input class="submit_button" type="submit" value="Login">
-              </form>
+            <div class="alert alert-warning" role="alert">Test Error
+              </div>
+            <div class="popup_form_wrap row">
+              <div class="col-12">
+                <form class="login-form">
+                    <label for="username"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="username">
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="password">
+                    <input class="submit_button" type="submit" value="Login">
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
-    
+
     
   </body>
   </html>

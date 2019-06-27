@@ -1,0 +1,35 @@
+#popup_login {
+  display: block;
+  align-self: center;
+  width: 350px;
+  background-color: white;
+  border: 2px solid grey;
+  border-radius: 10px;
+  margin: 2rem;
+  padding: 0.5rem; }
+  #popup_login label, #popup_login input {
+    width: 100%;
+    margin-bottom: 0.5rem; }
+
+#popup_login.logged-in {
+  display: none; }
+
+#login-container {
+  height: 100%;
+  margin: 0 auto 0 auto;
+  min-width: 450px;
+  padding: 1rem;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+@media screen and (max-width: 500px) {
+  #popup_login {
+    display: block;
+    font-size: medium;
+    padding: 0.5rem; }
+    #popup_login label, #popup_login input {
+      width: 25%; } }
+
+/*# sourceMappingURL=login.css.map */

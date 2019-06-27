@@ -1,86 +1,54 @@
-#tweetContainer {
-  box-sizing: border-box;
-}
+/*
+Sass::SyntaxError: You may not @extend an outer selector from within @media.
+You may only @extend selectors within the same directive.
+From "@extend %header-shared" on line 110 of public/sass/tweets.scss.
 
-article.tweet {
-  background-color: #eee;
-  border: 2px solid lightgrey;
-  border-radius: 10px;
-  box-sizing: border-box;
-  margin: 2em;
-}
 
-article.tweet:hover{
-  border: 2px solid gray;
-}
-
-article.tweet:hover header {
-  background:  #eee;
-  border-radius: 10px 10px 0 0;
-  box-sizing: border-box;
-  height: 70px;
-  margin: 0px;
-  opacity: 1;
-}
-
-article.tweet header {
-  background:  #eee;
-  border-radius: 10px 10px 0 0;
-  box-sizing: border-box;
-  height: 70px;
-  margin: 0px;
-  opacity: 0.2;
-}
-
-article.tweet header img {
-  border-radius: 10px;
-  float: left;
-  margin: 0.5em;
-}
-
-article.tweet header h2 {
-  float: left;
-  margin: 0em;
-  padding: 0.5em 0 0 0;
-}
-
-article.tweet header p {
-  color: grey;
-  float: right;
-  margin: 0;
-  padding: 1em 0.5em;
-}
-
-article.tweet article {
-  background-color:white;
-  overflow-wrap: break-word; 
-  padding: 1em;
-  width: 100%;
-}
-
-article.tweet footer {
-  background-color:white;
-  border-top: 2px solid #eee;
-  border-radius: 0 0 10px 10px;
-  padding: 1em 0.5em;
-}
-
-article.tweet span {
-  font-size: 0.75em;
-  margin: 0.5em;
-}
-
-article.tweet .icons {
-  color:#00a087;
-  display: none;
-  float: right;
-  font-size: 1em;
-  margin: 0;
-}
-
-article.tweet:hover .icons{
-  display: flex;
-  flex-direction: row;
-  font-size: 1em;
-  margin: 0;
-}
+Backtrace:
+public/sass/tweets.scss:3
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/selector/simple_sequence.rb:331:in `check_directives_match!'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/selector/simple_sequence.rb:197:in `block (2 levels) in do_extend'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/selector/simple_sequence.rb:197:in `each'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/selector/simple_sequence.rb:197:in `block in do_extend'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/selector/simple_sequence.rb:188:in `map!'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/selector/simple_sequence.rb:188:in `do_extend'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/selector/sequence.rb:116:in `block in do_extend'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/selector/sequence.rb:114:in `map'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/selector/sequence.rb:114:in `do_extend'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/selector/comma_sequence.rb:73:in `block in do_extend'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/selector/comma_sequence.rb:72:in `map'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/selector/comma_sequence.rb:72:in `do_extend'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/tree/visitors/extend.rb:44:in `visit_rule'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/tree/visitors/extend.rb:28:in `visit'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `map'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/tree/visitors/extend.rb:37:in `visit_children'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:38:in `visit'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/tree/visitors/extend.rb:28:in `visit'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/tree/visitors/extend.rb:15:in `visit'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/tree/root_node.rb:39:in `css_tree'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `each'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:294:in `watch'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/plugin.rb:109:in `method_missing'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:358:in `watch_or_update'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/exec/base.rb:50:in `parse'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/lib/sass/exec/base.rb:18:in `parse!'
+/home/eden/.rvm/gems/ruby-2.3.5/gems/sass-3.7.4/bin/sass:13:in `<top (required)>'
+/home/eden/.rvm/gems/ruby-2.3.5/bin/sass:23:in `load'
+/home/eden/.rvm/gems/ruby-2.3.5/bin/sass:23:in `<main>'
+/home/eden/.rvm/gems/ruby-2.3.5/bin/ruby_executable_hooks:24:in `eval'
+/home/eden/.rvm/gems/ruby-2.3.5/bin/ruby_executable_hooks:24:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Sass::SyntaxError: You may not @extend an outer selector from within @media.\A You may only @extend selectors within the same directive.\A From \"@extend %header-shared\" on line 110 of public/sass/tweets.scss.\A "; }

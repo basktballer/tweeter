@@ -59,66 +59,78 @@ function escape(str) {
 }
 
 $(document).ready(function () {
-  loadTweets();
-  $("form").on("submit", function(event) {
+
+  $(".login-form").on("submit", function(event) {
+
     event.preventDefault();
-    $(".input-error").slideUp("fast");
-    $(".input-error").text("");
-    const userInput =  $(this).serialize();
-    const inputLength = $(".tweet-area").val().trim().length;
-    if (inputLength === 0) {
-      $(".input-error").slideToggle("fast", () => {
-        $(".input-error").text("Blank entry submitted. Please enter tweet and try again.");
-      });
-    } 
-    else if (inputLength > 140) {
-      $(".input-error").slideToggle("fast", () => {
-        $(".input-error").text("Tweet too long. Please ensure tweet length is 140 characters or less.");
-      });
-    }  
-    else {
+
+    $("#popup_login").addClass("logged-in")
+    $("main").addClass("logged-in")
+
+
+    loadTweets();
+    $(".tweet-form").on("submit", function(event) {
+      event.preventDefault();
+      $(".input-error").slideUp("fast");
+      $(".input-error").text("");
+      const userInput =  $(this).serialize();
+      const inputLength = $(".tweet-area").val().trim().length;
+      if (inputLength === 0) {
+        $(".input-error").slideToggle("fast", () => {
+          $(".input-error").text("Blank entry submitted. Please enter tweet and try again.");
+        });
+      } 
+      else if (inputLength > 140) {
+        $(".input-error").slideToggle("fast", () => {
+          $(".input-error").text("Tweet too long. Please ensure tweet length is 140 characters or less.");
+        });
+      }  
+      else {
+        $.ajax({
+          type: 'POST',
+          url: "/tweets",
+          data: userInput
+        })
+        .done ( () => {
+          console.log("Tweet uploaded");
+          $(".tweet-area").val("");
+          $( ".tweet-area" ).trigger( "input", [ "" ] );
+          autoRenderNewTweet();
+        })
+        .fail ( () => {
+          console.log("Tweet upload failed.");
+        })
+      }
+    });
+    $("#tweet-container").on("click", ".fav-icon", function (e) {
+      // like increment counter, stretch activity in progress
+      let tweetID = $(this).data("tweetid");
+      let action = 0;
+      if ($(this).hasClass("clicked")) {
+        $(this).removeClass("clicked");
+        action = -1;
+      } else {
+        $(this).addClass("clicked");
+        action = 1;
+      }
       $.ajax({
         type: 'POST',
-        url: "/tweets",
-        data: userInput
+        url: "/tweets/" + tweetID,
+        data: {tweetID, action}
       })
-      .done ( () => {
-        console.log("Tweet uploaded");
-        $(".tweet-area").val("");
-        $( ".tweet-area" ).trigger( "input", [ "" ] );
-        autoRenderNewTweet();
-      })
-      .fail ( () => {
-        console.log("Tweet upload failed.");
-      })
-    }
-  });
-  $("#tweet-container").on("click", ".fav-icon", function (e) {
-    // like increment counter, stretch activity in progress
-    let tweetID = $(this).data("tweetid");
-    let action = 0;
-    if ($(this).hasClass("clicked")) {
-      $(this).removeClass("clicked");
-      action = -1;
-    } else {
-      $(this).addClass("clicked");
-      action = 1;
-    }
-    $.ajax({
-      type: 'POST',
-      url: "/tweets/" + tweetID,
-      data: {tweetID, action}
-    })
-    .done( response => {
-      $(this).siblings("span").text(response);
+      .done( response => {
+        $(this).siblings("span").text(response);
+      });
+  
     });
+    $("#compose-button").on("click", function () {
+      $(".new-tweet").slideToggle("fast");
+      if ($(".new-tweet").is(':visible')) 
+      {
+        $(".tweet-area").focus();
+      }
+    });
+  });
 
-  });
-  $("#compose-button").on("click", function () {
-    $(".new-tweet").slideToggle("fast");
-    if ($(".new-tweet").is(':visible')) 
-    {
-      $(".tweet-area").focus();
-    }
-  });
+
 });

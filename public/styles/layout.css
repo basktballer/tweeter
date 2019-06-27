@@ -4,35 +4,35 @@
  * Do not modify these two selectors, please
  */
 html {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
+
 *, *:before, *:after {
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 /*
  * Global layout stuff
  */
-
 body {
   background-color: #eee;
   color: #244751;
-  margin: 0;
-}
+  margin: 0; }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+* {
+  font-family: 'Roboto Condensed', sans-serif; }
 
- * {
-  font-family: 'Roboto Condensed', sans-serif;
- }
+main {
+  background-color: white;
+  height: 100%;
+  margin: 140px auto 0 auto;
+  min-width: 450px;
+  padding: 1rem;
+  width: 450px; }
 
- main {
-   background-color: white;
-   height: 100%;
-   margin: 140px auto 0 auto;
-   min-width: 450px;
-   padding: 1em;
-   width: 450px;
- }
+@media screen and (max-width: 500px) {
+  main {
+    width: 100%; } }
+
+/*# sourceMappingURL=layout.css.map */

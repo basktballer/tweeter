@@ -7,7 +7,9 @@
   border-radius: $compose-border-radius;
   padding: 1rem 1rem;
   display:flex;
-  justify-content: space-between;
+  // justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   
   i {
     align-self: center;

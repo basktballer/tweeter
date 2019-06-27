@@ -1,31 +1,32 @@
 .new-tweet {
   background-color: #eee;
-  border: 2px solid Grey;
+  border: 2px solid grey;
   border-radius: 10px;
   display: none;
-  margin: 2em;
-  padding: 0.5em;
-}
+  margin: 2rem;
+  padding: 0.5rem; }
+  .new-tweet h2 {
+    border-bottom: 2px solid #244751;
+    margin: 0 0 1rem 0; }
+  .new-tweet textarea {
+    padding: 0.5rem;
+    resize: none;
+    width: 100%; }
+  .new-tweet .input-error {
+    color: red;
+    display: none;
+    font-size: 0.75rem;
+    margin: 0.5rem 0; }
+  .new-tweet .counter {
+    color: #244751;
+    float: right; }
 
-.new-tweet h2 {
-  border-bottom: 2px solid #244751;
-  margin: 0 0 1em 0;
-}
+@media screen and (max-width: 500px) {
+  .new-tweet {
+    display: block;
+    font-size: medium;
+    padding: 0.5rem; }
+    .new-tweet input {
+      width: 25%; } }
 
-.new-tweet textarea {
-  padding: 0.5em;
-  resize: none;
-  width: 100%;
-}
-
-.counter {
-  color:  #244751;
-  float: right;
-}
-
-.input-error {
-  color: red;
-  display: none;
-  font-size: 0.75em;
-  margin: 0.5em 0;
-}
+/*# sourceMappingURL=new-tweet.css.map */
