@@ -57,12 +57,17 @@
       @extend %compose-shared;
       color:  $primary-color;
       opacity: 0.9;
-    
+      display:none;
+  
       &:hover {
         @extend %compose-shared;
         color:  $primary-font-color;
         opacity: 1;
       }
+    }
+
+    #compose-button.show-tweets {
+      display:flex;
     }
   }
 }

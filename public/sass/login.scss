@@ -1,6 +1,6 @@
 @import 'sassvars';
 
-#popup_login {
+#popup_login, #popup_register{
   display:block;
   align-self: center;
   width: 350px;
@@ -18,6 +18,10 @@
 }
 
 #popup_login.logged-in {
+  display: none;
+}
+
+.alert-warning {
   display: none;
 }
 

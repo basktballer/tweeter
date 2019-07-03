@@ -41,10 +41,13 @@
     text-align: right; }
     #nav-bar .nav-buttons #compose-button {
       color: #00a087;
-      opacity: 0.9; }
+      opacity: 0.9;
+      display: none; }
       #nav-bar .nav-buttons #compose-button:hover {
         color: #244751;
         opacity: 1; }
+    #nav-bar .nav-buttons #compose-button.show-tweets {
+      display: flex; }
 
 @media screen and (max-width: 500px) {
   #nav-bar {

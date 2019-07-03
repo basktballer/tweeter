@@ -60,16 +60,40 @@ function escape(str) {
 
 $(document).ready(function () {
 
+  $("#popup_register").hide()
+
+  $(".register-toggle").on("click", function(event) {
+    $("#popup_register").show()
+    $("#popup_login").hide()
+  });
+
+  $(".login-toggle").on("click", function(event) {
+    $("#popup_register").hide()
+    $("#popup_login").show()
+  });
+
   $(".login-form").on("submit", function(event) {
 
     event.preventDefault();
-
-    $("#popup_login").addClass("logged-in")
-    $("main").addClass("logged-in")
-
-
-    loadTweets();
-    $(".tweet-form").on("submit", function(event) {
+    $(".alert-warning").slideUp("fast");
+    $(".alert-warning").text("");
+    
+    const username =  $("input[name=username]").val();
+    const password = $("input[name=password]").val();
+    console.log(username, password);
+    if (username.length === 0 || password.length === 0) {
+      $(".alert-warning").slideToggle("fast", () => {
+        $(".alert-warning").text("Username and password cannot be blank.");
+      });
+    } 
+    else {      
+      
+      $("#popup_login").addClass("logged-in")
+      $("main").addClass("show-tweets")
+      $("#compose-button").addClass("show-tweets")      
+      
+      loadTweets();
+      $(".tweet-form").on("submit", function(event) {
       event.preventDefault();
       $(".input-error").slideUp("fast");
       $(".input-error").text("");
@@ -101,36 +125,35 @@ $(document).ready(function () {
           console.log("Tweet upload failed.");
         })
       }
-    });
-    $("#tweet-container").on("click", ".fav-icon", function (e) {
-      // like increment counter, stretch activity in progress
-      let tweetID = $(this).data("tweetid");
-      let action = 0;
-      if ($(this).hasClass("clicked")) {
-        $(this).removeClass("clicked");
-        action = -1;
-      } else {
-        $(this).addClass("clicked");
-        action = 1;
-      }
-      $.ajax({
-        type: 'POST',
-        url: "/tweets/" + tweetID,
-        data: {tweetID, action}
-      })
-      .done( response => {
-        $(this).siblings("span").text(response);
       });
-  
-    });
-    $("#compose-button").on("click", function () {
-      $(".new-tweet").slideToggle("fast");
-      if ($(".new-tweet").is(':visible')) 
-      {
-        $(".tweet-area").focus();
-      }
-    });
+      $("#tweet-container").on("click", ".fav-icon", function (e) {
+        // like increment counter, stretch activity in progress
+        let tweetID = $(this).data("tweetid");
+        let action = 0;
+        if ($(this).hasClass("clicked")) {
+          $(this).removeClass("clicked");
+          action = -1;
+        } else {
+          $(this).addClass("clicked");
+          action = 1;
+        }
+        $.ajax({
+          type: 'POST',
+          url: "/tweets/" + tweetID,
+          data: {tweetID, action}
+        })
+        .done( response => {
+          $(this).siblings("span").text(response);
+        });
+        
+      });
+      $("#compose-button").on("click", function () {
+        $(".new-tweet").slideToggle("fast");
+        if ($(".new-tweet").is(':visible')) 
+        {
+          $(".tweet-area").focus();
+        }
+      });
+    }
   });
-
-
 });

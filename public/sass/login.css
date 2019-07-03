@@ -1,4 +1,4 @@
-#popup_login {
+#popup_login, #popup_register {
   display: block;
   align-self: center;
   width: 350px;
@@ -7,11 +7,14 @@
   border-radius: 10px;
   margin: 2rem;
   padding: 0.5rem; }
-  #popup_login label, #popup_login input {
+  #popup_login label, #popup_login input, #popup_register label, #popup_register input {
     width: 100%;
     margin-bottom: 0.5rem; }
 
 #popup_login.logged-in {
+  display: none; }
+
+.alert-warning {
   display: none; }
 
 #login-container {
